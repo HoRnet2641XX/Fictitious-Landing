@@ -1,0 +1,35 @@
+{
+  "name": "sampleLP",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@webpack-cli/init": "0.2.2",
+    "autoprefixer": "^9.8.4",
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "copy-webpack-plugin": "^6.0.2",
+    "css-loader": "^3.6.0",
+    "eslint-loader": "^4.0.2",
+    "html-webpack-plugin": "^4.3.0",
+    "postcss-loader": "^3.0.0",
+    "sass": "^1.26.9",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.2.1",
+    "url-loader": "^4.1.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
+  },
+  "description": "My webpack project",
+  "scripts": {
+    "build": "webpack"
+  },
+  "dependencies": {
+    "eslint": "^7.3.1",
+    "mini-css-extract-plugin": "^0.9.0",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
