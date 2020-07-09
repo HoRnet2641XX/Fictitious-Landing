@@ -1,10 +1,79 @@
-.homeContent__one {
+.homeContent__picture {
   width: 1920px;
+  max-width: 100%;
   height: 1080px;
+  max-height: 100%;
   background-image: url('img/kyoto.png');
+  animation: fadeIn 3s ease 0s 1 normal;
 }
 
-.Test {
-  width: 10rem;
-  height: 10rem;
+.homeContent__picture>img {
+  @keyframes fadeIn {
+    0% {
+      opacity: 0
+    }
+
+    100% {
+      opacity: 1
+    }
+  }
+}
+
+.homeContent_timeline {
+  position: relative;
+  margin: 5rem;
+  padding-bottom: 2rem;
+}
+
+.homeContent_timeline:before {
+  position: absolute;
+  top: 0px;
+  left: 45px;
+  width: 3px;
+  height: 100%;
+  background: $introduce-Magenta;
+  content: '';
+}
+
+.homeContent_timeline .timeline_item {
+  margin: 0px 0px 0px 80px;
+}
+
+.homeContent_timeline .timeline_item .time_date .time {
+  position: relative;
+  margin: 0;
+  color: $introduce-Orange;
+  font-weight: bold;
+  font-size: 6rem;
+  font-family: serif;
+  letter-spacing: 3px;
+  opacity: 0.3;
+}
+
+.homeContent_timeline .timeline_item .time_date .time:before {
+  position: absolute;
+  top: 50%;
+  left: -42px;
+  width: 10px;
+  height: 10px;
+  background: $white;
+  border: 3px solid $introduce-Magenta;
+  transform: rotate(45deg);
+  content: '';
+}
+
+.homeContent_timeline .timeline_item .time_date .flag {
+  margin: 0;
+  margin-top: -60px;
+  color: $introduce-Red;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.homeContent_timeline .timeline_item .desc {
+  margin-top: 10px;
+  padding-left: 20px;
+  font-size: 0.8em;
+  line-height: 20px;
+  border-left: 1px solid $introduce-Red;
 }

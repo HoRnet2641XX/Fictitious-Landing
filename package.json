@@ -52,5 +52,10 @@
   "dependencies": {
     "mini-css-extract-plugin": "^0.9.0",
     "webpack-dev-server": "^3.11.0"
-  }
+  },
+  "browserslist": [
+		"last 2 versions",
+		"ie >= 11",
+		"Android >= 4.4"
+	]
 }

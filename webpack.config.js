@@ -26,17 +26,6 @@ module.exports = {
           'style-loader',
           'css-loader?url=false',
           {
-            loader: 'postcss-loader',
-            options: {
-              url: true,
-              plugins: [
-                require('autoprefixer')({
-                  browsers: ['last 2 versions', 'ie >= 11', 'Android >= 4'],
-                }),
-              ],
-            },
-          },
-          {
             loader: 'sass-loader',
           },
         ],
@@ -79,7 +68,12 @@ module.exports = {
       filename: 'styles/bundle.[name].css',
     }),
     new CopyWebpackPlugin({
-      patterns: [{ from: 'src', to: '' }],
+      patterns: [
+        {
+          from: 'src',
+          to: '',
+        },
+      ],
     }),
   ],
 };

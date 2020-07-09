@@ -3,28 +3,46 @@
 //
 //
 // valiables
-@import "./valiables/color";
-@import "./valiables/font";
-@import "./valiables/layout";
-@import "./valiables/z-index";
+@import './valiables/color';
+@import './valiables/font';
+@import './valiables/layout';
+@import './valiables/z-index';
 //
 //
 //
 // modules
-@import "./modules/header";
-@import "./modules/footer";
-@import "./modules/main";
+@import './modules/header';
+@import './modules/footer';
+@import './modules/main';
 //
 //
 //
 // abstracts
-@import "./abstracts/mixin";
+@import './abstracts/mixin';
 
 //
 //
 //
 
 // app.scss記載
-div {
-  color: red;
+* {
+  box-sizing: border-box;
 }
+
+html {
+  font-size: 16px;
+
+  @include mobile() {
+    font-size: 12px;
+  }
+}
+
+body {
+  font-size: 1rem;
+  font-family: $font-family;
+}
+
+// .g-container__Wrap {
+//   color: $white;
+//   background-color: $black;
+// }

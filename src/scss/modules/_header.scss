@@ -1,0 +1,33 @@
+.g-navigation__Header {
+  height: 100px;
+}
+
+.placeTarget {
+  width: 100px;
+  height: 75px;
+  text-align: left;
+}
+
+.navigation {
+  &__headerLists {
+    align-items: center;
+    padding: 1rem;
+    text-align: right;
+  }
+
+  &__headerItem {
+    display: inline-block;
+    margin: 1rem;
+    color: $introduce-Orange;
+    font-size: $font-weight-bold;
+
+    &:last-child {
+      margin-right: 5rem;
+    }
+  }
+
+  &__headerIcon {
+    width: 50px;
+    height: 50px;
+  }
+}
