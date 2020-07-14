@@ -1,27 +1,31 @@
+@import './abstracts/mixin';
+
 .homeContent__picture {
-  width: 1920px;
-  max-width: 100%;
-  height: 1080px;
-  max-height: 100%;
+  width: 100%;
+  max-width: 1280px;
+  height: 720px;
+  margin: auto;
   background-image: url('img/kyoto.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
   animation: fadeIn 3s ease 0s 1 normal;
 }
 
-.homeContent__picture>img {
+.homeContent__picture > img {
   @keyframes fadeIn {
     0% {
-      opacity: 0
+      opacity: 0;
     }
 
     100% {
-      opacity: 1
+      opacity: 1;
     }
   }
 }
 
 .homeContent_timeline {
   position: relative;
-  margin: 5rem;
   padding-bottom: 2rem;
 }
 
@@ -83,10 +87,14 @@
 }
 
 .areaIntroduction {
-  width: 300px;
-  max-width: 100%;
-  height: 200px;
-  height: auto;
+  width: 100%;
+  max-width: 500px;
+  max-height: 350px;
+
+  @include tablet() {
+    width: 350px;
+    height: 200px;
+  }
 }
 
 .homeContent__aboutArea {
@@ -94,16 +102,18 @@
   flex-wrap: wrap;
   text-align: center;
 
-
-  >.homeContent__pickupArea {
+  > .homeContent__pickupArea {
     position: relative;
     width: (100%/3);
-    padding: 2rem;
+    padding: 4rem;
     overflow: hidden;
     border: border-box;
+
+    @include tablet() {
+      padding: 0.5rem;
+    }
   }
 }
-
 
 .hover__mask {
   position: absolute;
@@ -114,7 +124,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
   color: $white;
+  font-size: $font-size-xx-large;
   text-align: center;
   background: rgba(160, 152, 152, 0.5);
   opacity: 0;

@@ -42,6 +42,28 @@ body {
   font-family: $font-family;
 }
 
+.primary-Height {
+  margin: 7rem auto;
+}
+
+.g-container__Wrap {
+  width: 100%;
+  background-image: url('img/pc_bg_01.png');
+}
+
+.break-Line {
+  width: 1px;
+  height: 20px;
+  background-color: $introduce-Red-bright;
+}
+.navigation__Anchor-Tag {
+  &:hover {
+    cursor: pointer;
+    opacity: 0.5;
+    transition: all 400ms;
+  }
+}
+
 // .g-container__Wrap {
 //   color: $white;
 //   background-color: $black;
