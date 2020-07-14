@@ -6,6 +6,7 @@ module.exports = {
     'stylelint-scss',
   ],
   rules: {
+    'string-quotes': 'single',
     'at-rule-no-unknown': [
       true,
       {

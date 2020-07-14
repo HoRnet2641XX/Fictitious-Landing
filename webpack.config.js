@@ -10,7 +10,7 @@ module.exports = {
   devServer: {
     contentBase: 'dist',
     open: true,
-    port: 9002,
+    port: 9101,
   },
   /// ファイルの出力設定/
   output: {
@@ -24,33 +24,11 @@ module.exports = {
         test: /\.s[ac]ss$/,
         use: [
           'style-loader',
-          'css-loader',
-          {
-            loader: 'postcss-loader',
-            options: {
-              plugins: [
-                require('autoprefixer')({
-                  browsers: ['last 2 versions', 'ie >= 11', 'Android >= 4'],
-                }),
-              ],
-            },
-          },
+          'css-loader?url=false',
           {
             loader: 'sass-loader',
           },
         ],
-      },
-      {
-        test: /.(js|jsx)$/,
-        include: [path.resolve(__dirname, 'src/js')],
-        loader: 'babel-loader',
-      },
-      // // ↓ 追加
-      {
-        test: /.js$/,
-        exclude: /node_modules/,
-        include: [path.resolve(__dirname, 'src/js')],
-        loader: 'eslint-loader',
       },
       {
         test: /\.(jpg|png)$/,
@@ -63,16 +41,39 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /.(js|jsx)$/,
+        include: [path.resolve(__dirname, 'src/js')],
+        loader: 'babel-loader',
+      },
+      {
+        test: /.js$/,
+        exclude: /node_modules/,
+        include: [path.resolve(__dirname, 'src/js')],
+        loader: 'eslint-loader',
+      },
+      {
+        test: /\.ejs$/,
+        use: ['html-loader', 'ejs-html-loader'],
+      },
     ],
   },
 
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: './src/index.html',
+      template: 'src/index.ejs',
     }),
     new MiniCssExtractPlugin({
-      filename: 'styles/bundle_[name].css',
+      filename: 'styles/bundle.[name].css',
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: 'src',
+          to: '',
+        },
+      ],
     }),
   ],
 };

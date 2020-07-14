@@ -3,27 +3,68 @@
 //
 //
 // valiables
-@import "./valiables/color";
-@import "./valiables/font";
-@import "./valiables/layout";
-@import "./valiables/z-index";
+@import './valiables/color';
+@import './valiables/font';
+@import './valiables/layout';
+@import './valiables/z-index';
 //
 //
 //
 // modules
-@import "./modules/header";
-@import "./modules/footer";
-@import "./modules/main";
+@import './modules/header';
+@import './modules/footer';
+@import './modules/main';
 //
 //
 //
 // abstracts
-@import "./abstracts/mixin";
+@import './abstracts/mixin';
 
 //
 //
 //
+
 // app.scss記載
-div {
-  color: red;
+* {
+  box-sizing: border-box;
 }
+
+html {
+  font-size: 16px;
+
+  @include mobile() {
+    font-size: 12px;
+  }
+}
+
+body {
+  font-size: 1rem;
+  font-family: $font-family;
+}
+
+.primary-Height {
+  margin: 7rem auto;
+}
+
+.g-container__Wrap {
+  width: 100%;
+  background-image: url('img/pc_bg_01.png');
+}
+
+.break-Line {
+  width: 1px;
+  height: 20px;
+  background-color: $introduce-Red-bright;
+}
+.navigation__Anchor-Tag {
+  &:hover {
+    cursor: pointer;
+    opacity: 0.5;
+    transition: all 400ms;
+  }
+}
+
+// .g-container__Wrap {
+//   color: $white;
+//   background-color: $black;
+// }
